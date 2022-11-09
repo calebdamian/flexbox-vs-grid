@@ -12,7 +12,6 @@ body {
 
 .contenedor {
 	display: grid;
-	/*si se pone 3frames es mejor que 1fr ya que le damos el espacio a las 3 tarjetas de concierto que van a ir dentro*/
 	grid-template-columns: 1fr auto;
 	max-width: 1200px;
 	width: 90%;
@@ -27,7 +26,6 @@ body {
 
 .contenedor-conciertos {
 	display: grid;
-	/*indica que los elementos hijos son 3 en cada frame*/
 	grid-template-columns: repeat(3, 1fr);
 	gap: 20px;
 }
