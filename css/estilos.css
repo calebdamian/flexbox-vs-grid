@@ -5,82 +5,79 @@
 }
 
 body {
-	background: #1D202B;
+	background: #1d202b;
 	color: #fff;
-	font-family: 'Roboto', sans-serif;
+	font-family: "Roboto", sans-serif;
 }
 
 .contenedor {
-	/*se define max-width para seguir el disenio, dentro de los hijos se debe especificar width*/
-    max-width: 1200px;
-	margin: auto;
-	display: flex;
-	/*
-	gap sirve para separar los elementos (parecido a un padding)
-	pero dentro del container*/
-	gap:20px;
-	padding: 50px;
+	display: grid;
+	/*si se pone 3frames es mejor que 1fr ya que le damos el espacio a las 3 tarjetas de concierto que van a ir dentro*/
+	grid-template-columns: 1fr auto;
+	max-width: 1200px;
+	width: 90%;
+	padding: 40px;
+	margin: 0 auto;
+	gap: 20px;
 }
 
 .titulo {
 	font-size: 24px;
-
 }
 
 .contenedor-conciertos {
-	/*se debe especificar width, no max-width y con porcentajes para pensar en responsive*/
-	width: 70%;
-	display: flex;
-	flex-wrap: wrap;
-	gap: 25px;
+	display: grid;
+	/*indica que los elementos hijos son 3 en cada frame*/
+	grid-template-columns: repeat(3, 1fr);
+	gap: 20px;
 }
 
 .card {
-	min-height: 150px;
-	/*propiedad que permite que el fondo ocupe todo lo que pueda dentro del item*/
 	background-size: cover;
 	border-radius: 10px;
-	/*ocupa el 33.33 por ciento de su contenedor padre, como son 3 tarjetas se divide el 100 para 3*/
-	width: calc(33.33% - 25px);
-	/* no funciona debido a que no alcanza, por lo que se usa calc
-	gap:20px;
-	margin:20px;*/
-	
+	min-height: 200px;
+	overflow: hidden;
 }
 
 .card .textos {
-display: flex;
-flex-direction: column;
-justify-content: space-between;
 	height: 100%;
-	padding: 5%;
+	display: grid;
+	padding: 20px;
 }
-.bg1{
+
+.bg1 {
 	background-image: url("../img/1.jpg");
 }
-.bg2{
+
+.bg2 {
 	background-image: url("../img/2.jpg");
 }
-.bg3{
+
+.bg3 {
 	background-image: url("../img/3.jpg");
 }
-.bg4{
+
+.bg4 {
 	background-image: url("../img/4.jpg");
 }
-.bg5{
+
+.bg5 {
 	background-image: url("../img/5.jpg");
 }
-.bg6{
+
+.bg6 {
 	background-image: url("../img/6.jpg");
 }
 
 .banner {
+	background: url("../img/banner.jpg") center center 
+	transparent;
 	background-size: cover;
-	background: url("../img/banner.jpg") center center transparent;
-	width: 30%;
 	border-radius: 10px;
-	padding: 5%;
-	align-content: center;
+	text-align: center;
+	overflow: hidden;
+	min-width: 300px;
+	padding: 20px;
 }
 
 .banner ul {
@@ -93,7 +90,7 @@ justify-content: space-between;
 }
 
 .banner .boton {
-	background: #FFD600;
+	background: #ffd600;
 	display: block;
 	width: 100%;
 	font-weight: bold;
@@ -102,19 +99,12 @@ justify-content: space-between;
 	padding: 10px;
 	border: none;
 	border-radius: 100px;
-	font-family: 'Roboto', sans-serif;
+	font-family: "Roboto", sans-serif;
 	cursor: pointer;
-	
 }
 
-@media screen and (max-width: 900px) {
-	
-}
+@media screen and (max-width: 900px) {}
 
-@media screen and (max-width: 700px) {
-	
-}
+@media screen and (max-width: 700px) {}
 
-@media screen and (max-width: 600px) {
-
-}
+@media screen and (max-width: 600px) {}
